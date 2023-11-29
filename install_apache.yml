@@ -1,0 +1,19 @@
+---
+
+- hosts: all
+  become: true
+  tasks:
+
+  - name: sudo apt update
+    apt:
+      update_cache: yes
+
+  - name: sudo apt install -y apache2
+    apt:
+      name: apache2
+      state: latest
+
+  - name: sudo apt install -y libapache2-mod-php
+    apt:
+      name: libapache2-mod-php
+      state: latest
